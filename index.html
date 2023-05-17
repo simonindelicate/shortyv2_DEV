@@ -104,14 +104,81 @@
   background: linear-gradient(to bottom, #ffa154, #fd64c1);
       }
       .section:nth-child(2) {
-        background-color: lightyellow;
+        background-color: grey;
+        padding:50px;
+        margin:auto;
       }
       .section:nth-child(3) {
-        background-color: lightcoral;
+        background-color: white;
+        background-image: url('sfbg.png');
+        background-size: contain;
       }
       .section:nth-child(4) {
         background-color: lightgray;
       }
+
+.section-txt{
+  max-width:800px;
+  color:white;
+        display: flex;
+        justify-content: center;
+         flex-direction: column;
+}
+.sect-txt h2{
+  font-weight: bold;
+  margin-top:20px;
+}
+form {
+  width: 500px;
+  max-width: 500px;
+    margin: 50px auto;
+    padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  background-color: rgba(235,235,235,0.3);
+}
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: bigger;
+}
+
+#callback + label,
+#email-request + label, #subscribe + label {
+  display: inline-block;
+}
+
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.1);
+}
+form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+@media (max-width:600px) {
+    form {
+        width:90%;
+    }
+}
+
       .footer {
         height: 50px;
         background-color: lightblue;
@@ -150,16 +217,47 @@
     </div>
   </div>
   <div class="card">
-    <img src="image3.jpg" alt="Image 3">
+    <img src="WEB3.png" alt="Image 3">
     <div class="card-content">
-      <h2>Title 3</h2>
-      <p>Subtitle 3</p>
+      <h2>Web3 Marketing</h2>
+      <p>Community Building, Influencer Programs, Publicity and Buzz</p>
     </div>
   </div>
 
       </div>
-      <div class="section">Section 2</div>
-      <div class="section">Section 3</div>
+      <div class="section">
+        <div class="section-txt">
+        <h2>We are a women-owned creative and strategic consultancy at the intersection of  art, culture and technology.</h2>
+        <p>We are enlightened generalists fluent in the languages of new media, entertainment and convergence culture. Our guiding principle is to inspire the world around us by creating unconventional content and innovative programs that lead people to engage.</p>
+        <p>As strategists, connectors and producers, we have deep-rooted relationships with technologists, artists, celebrities, makers, brands and media platforms. We are often brought in to consult on integrated brand strategies, influencer and music partnerships, experiential activations and production.</p>
+      </div>
+      </div>
+      <div class="section">
+        <form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br>
+
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" name="phone"><br>
+
+  <label for="message">How can we help?</label><br>
+  <textarea id="message" name="message"></textarea><br>
+
+  <input type="checkbox" id="callback" name="callback">
+  <label for="callback">Request a callback</label><br>
+
+  <input type="checkbox" id="email-request" name="email-request">
+  <label for="email-request">Request an email</label><br>
+
+  <input type="checkbox" id="subscribe" name="subscribe">
+  <label for="subscribe">Subscribe to email list</label><br>
+
+  <input type="submit" value="Submit">
+</form>
+      </div>
       <div class="section">Section 4</div>
     </div>
     <div class="footer">Footer</div>
