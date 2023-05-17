@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+      /* Add your CSS styles here */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Comfortaa', cursive;
+      }
+.navbar {
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.branding {
+  display: flex;
+  align-items: center;
+}
+.branding-logo {
+  height:90px;
+}
+.Navigation {
+  display: flex;
+  align-items: baseline;
+}
+      .splash {
+        height: calc(100vh - 120px);
+        display: flex;
+        justify-content: center;
+         flex-direction: column;
+        align-items: center;
+        background-color: lightgreen;
+        background-image: url('bg.jpg');
+        background-size: cover;
+         }
+      .splash .cta {
+        /* Style your CTA button here */
+      }
+
+.strapline {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.cta {
+  position: absolute;
+  bottom: 20px;
+}
+
+      .cta {
+  background-color: orange;
+  color: white;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.cta:hover {
+  transform: scale(1.05);
+}
+.cta:active {
+  transform: scale(0.95);
+}
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 450px;
+}
+.card {
+  flex: 0 1 calc(33.33% - 100px);
+  margin: 50px;
+  background-color: white;
+  max-width: 300px;
+  border-radius: 15px;
+}
+.card img {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+}
+.card-content {
+  border: 1px solid white;
+  padding:15px;
+
+  border-radius: 15px;
+}
+@media (max-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
+}
+      .section:nth-child(1) {
+  background: linear-gradient(to bottom, #ffa154, #fd64c1);
+      }
+      .section:nth-child(2) {
+        background-color: lightyellow;
+      }
+      .section:nth-child(3) {
+        background-color: lightcoral;
+      }
+      .section:nth-child(4) {
+        background-color: lightgray;
+      }
+      .footer {
+        height: 50px;
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="branding"><img src="sm-logo.png" class="branding-logo"></div>
+      <div class="Navigation">About | Services | Contact </div>
+    </div>
+    <div class="splash">
+      <div class="strapline">
+      <h1>A creative consultancy concentrating on entertainment and convergence culture.
+      </h1>
+    </div>
+      <button class="cta">Let's Talk</button>
+    </div>
+    <div class="sections">
+      <div class="section">
+          <div class="card">
+    <img src="AI.png" alt="Image 1">
+    <div class="card-content">
+      <h2>AI Web Apps</h2>
+      <p>We can build them</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="NFT.jpg" alt="Image 2">
+    <div class="card-content">
+      <h2>NFT creation and Drop strategy</h2>
+      <p>We do that</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="image3.jpg" alt="Image 3">
+    <div class="card-content">
+      <h2>Title 3</h2>
+      <p>Subtitle 3</p>
+    </div>
+  </div>
+
+      </div>
+      <div class="section">Section 2</div>
+      <div class="section">Section 3</div>
+      <div class="section">Section 4</div>
+    </div>
+    <div class="footer">Footer</div>
+    <script>
+      // Add your JavaScript code here
+    </script>
+  </body>
+</html>
