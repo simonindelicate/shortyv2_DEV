@@ -119,9 +119,14 @@
         background-size: cover;
       }
       .section:nth-child(4) {
-        background-color: lightgray;
+        background-color: white;
         padding: 70px 0;
       }
+            .section:nth-child(4) img{
+              padding:10px;
+              max-width: 90%;
+              margin: auto;
+            }
 
 .section-txt{
   max-width:800px;
@@ -129,6 +134,11 @@
         display: flex;
         justify-content: center;
          flex-direction: column;
+}
+.section-title {
+flex-basis: 100%;
+    justify-content: center;
+    display: flex;
 }
 .sect-txt h2{
   font-weight: bold;
@@ -275,10 +285,38 @@ form input[type="submit"]:hover {
 </form>
       </div>
       <div class="section">
-        <img src="brands.png">
+        <div class="section-title"><h1>Partnerships</h1></div>
+        <img src="brands1.jpg"><img src ="brands2.jpg">
       </div>
     </div>
     <div class="footer">Footer</div>
+    <script>
+const container = document.querySelector('.sections');
+const sections = container.querySelectorAll('.section');
+// ...
 
+let currentSectionIndex = 0;
+let isScrolling = false;
+
+container.addEventListener('wheel', (event) => {
+    console.log('wheel event fired');
+  if (isScrolling) return;
+  if (event.deltaY < 0) {
+    currentSectionIndex = Math.max(currentSectionIndex - 1, 0);
+  } else {
+    currentSectionIndex = Math.min(currentSectionIndex + 1, sections.length - 1);
+  }
+  scrollToSection(currentSectionIndex);
+});
+
+function scrollToSection(index) {
+  console.log('scrolling to section:', sections[index]);
+  isScrolling = true;
+  sections[index].scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    isScrolling = false;
+  }, 500);
+}
+</script>
   </body>
 </html>
