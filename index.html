@@ -11,6 +11,11 @@
         margin: 0;
         padding: 0;
         font-family: 'Comfortaa', cursive;
+        height:auto;
+        scroll:auto;
+      }
+      img {
+        max-width: 100vw;
       }
 .navbar {
   height: 120px;
@@ -50,7 +55,7 @@
 }
 .cta {
   position: absolute;
-  bottom: 20px;
+  bottom: 50px;
 }
 
       .cta {
@@ -111,10 +116,11 @@
       .section:nth-child(3) {
         background-color: white;
         background-image: url('sfbg.png');
-        background-size: contain;
+        background-size: cover;
       }
       .section:nth-child(4) {
         background-color: lightgray;
+        padding: 70px 0;
       }
 
 .section-txt{
@@ -135,7 +141,7 @@ form {
     padding: 50px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-  background-color: rgba(235,235,235,0.3);
+  background-color: rgba(235,235,235,0.95);
 }
 form label {
   display: block;
@@ -175,7 +181,12 @@ form input[type="submit"]:hover {
 }
 @media (max-width:600px) {
     form {
-        width:90%;
+        width:80%;
+            margin: 20px auto;
+    padding: 20px;
+    }
+    .card {
+      margin: 25px auto;
     }
 }
 
@@ -187,8 +198,13 @@ form input[type="submit"]:hover {
         align-items: center;
       }
     </style>
+
+
   </head>
   <body>
+
+
+
     <div class="navbar">
       <div class="branding"><img src="sm-logo.png" class="branding-logo"></div>
       <div class="Navigation">About | Services | Contact </div>
@@ -258,11 +274,11 @@ form input[type="submit"]:hover {
   <input type="submit" value="Submit">
 </form>
       </div>
-      <div class="section">Section 4</div>
+      <div class="section">
+        <img src="brands.png">
+      </div>
     </div>
     <div class="footer">Footer</div>
-    <script>
-      // Add your JavaScript code here
-    </script>
+
   </body>
 </html>
