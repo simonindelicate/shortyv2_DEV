@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website</title>
     <style>
@@ -50,30 +52,43 @@
       }
 
 .strapline {
-  text-align: center;
-  margin-bottom: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+    max-width: 90%;
 }
 .cta {
   position: absolute;
   bottom: 50px;
 }
-
-      .cta {
-  background-color: orange;
-  color: white;
-  font-size: 1.5rem;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+.cta {
+    background-color: #ffa500db;
+    color: white;
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    margin: 0 0 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 .cta:hover {
   transform: scale(1.05);
+      background-color: orange;
 }
 .cta:active {
   transform: scale(0.95);
 }
+.cta::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px inset #f79d95db;
+    border-radius: 7px;
+}
+
 .section {
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +97,7 @@
 }
 .card {
   flex: 0 1 calc(33.33% - 100px);
-  margin: 100px 50px;
+  margin: 65px 50px;
   background-color: white;
   max-width: 300px;
   border-radius: 15px;
@@ -105,20 +120,26 @@
     flex-direction: column;
   }
 }
-      .section:nth-child(1) {
-  background: linear-gradient(to bottom, #ffa154, #fd64c1);
-      }
+.section:nth-child(1) {
+    background: linear-gradient(to bottom, #ffa154, #fd64c1);
+    padding: 70px 0 70px;
+}
       .section:nth-child(2) {
         background-color: #4f4848;
         padding:50px;
         margin:auto;
       }
-      .section:nth-child(3) {
-        background-color: white;
-        background-image: url('sfbg.png');
-        background-size: cover;
+            .section:nth-child(3) {
+        background-color: #2f2818;
+        padding:50px;
+        margin:auto;
       }
       .section:nth-child(4) {
+        background-color: white;
+        background-image: url('img/bg1.png');
+        background-size: cover;
+      }
+      .section:nth-child(5) {
         background-color: white;
         padding: 70px 0;
       }
@@ -128,12 +149,13 @@
               margin: auto;
             }
 
-.section-txt{
-  max-width:800px;
-  color:white;
-        display: flex;
-        justify-content: center;
-         flex-direction: column;
+.section-txt {
+    max-width: 800px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 85px auto;
 }
 .section-title {
 flex-basis: 100%;
@@ -207,6 +229,32 @@ form input[type="submit"]:hover {
         justify-content: center;
         align-items: center;
       }
+
+  i {
+    font-style: italic;
+      }
+
+.staff {
+    flex: 0 1 calc(33.33% - 100px);
+    margin: 65px 20px;
+    background-color: white;
+    max-width: 100px;
+    max-height: 200px;
+    border-radius: 15px;
+}
+.staff img {
+  max-width: 100px;
+  width: auto;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+}
+.staff-content {
+  text-align: center;
+}
+.contact-form {
+    margin: 70px auto;
+    box-shadow: #333 2px 2px 12px;
+}
     </style>
 
 
@@ -228,38 +276,115 @@ form input[type="submit"]:hover {
     </div>
     <div class="sections">
       <div class="section">
-          <div class="card">
+          <div class="card" data-aos="zoom-in-up" data-aos-duration="300">
     <img src="AI.png" alt="Image 1">
-    <div class="card-content">
-      <h2>AI Web Apps</h2>
-      <p>We can build them</p>
+    <div class="card-content" >
+      <h2>Building AI Web Apps</h2>
+      <p>Custom chatbots, AI games, AI concierge services - leveraging cuttiing edge AI Web4 tech for your organisation</p>
     </div>
   </div>
-  <div class="card">
-    <img src="NFT.jpg" alt="Image 2">
+  <div class="card" data-aos="zoom-in-up" data-aos-duration="400">
+    <img src="img/SDXL.png" alt="Image 2">
     <div class="card-content">
-      <h2>NFT creation and Drop strategy</h2>
-      <p>We do that</p>
+      <h2>Unlocking The Power of Generative AI</h2>
+      <p>Using Stable Diffusion, Midjourney, ChatGPT, DanceDiffusion and more to 10x your productivity</p>
     </div>
   </div>
-  <div class="card">
+  <div class="card" data-aos="zoom-in-up" data-aos-duration="500">
+    <img src="img/LOGO.png" alt="Image 3">
+    <div class="card-content">
+      <h2>Brand creation and strategy</h2>
+      <p>We can help build brands that will thrive in the new economy</p>
+    </div>
+  </div>
+
+  <div class="card" data-aos="zoom-in-up" data-aos-duration="600">
+    <img src="NFT.jpg" alt="Image 3">
+    <div class="card-content">
+      <h2>Blockchains, NFTs and Crypto</h2>
+      <p>Explore the possibilities of digital collectibles, smart contracts and token gated content</p>
+    </div>
+  </div>
+    <div class="card" data-aos="zoom-in-up" data-aos-duration="700">
     <img src="WEB3.png" alt="Image 3">
     <div class="card-content">
       <h2>Web3 Marketing</h2>
       <p>Community Building, Influencer Programs, Publicity and Buzz</p>
     </div>
   </div>
-
+      <div class="card" data-aos="zoom-in-up" data-aos-duration="800">
+    <img src="VR.png" alt="Image 3">
+    <div class="card-content">
+      <h2>Innovative Production</h2>
+      <p>VR projects, Video, Gaming Experiential Marketing - we've got the experience to realise your vision</p>
+    </div>
+  </div>
       </div>
       <div class="section">
-        <div class="section-txt">
+        <div class="section-txt" data-aos="flip-left">
+           <h2>It's not easy to keep on top of every new technological breakthrough, industry trend and hype cycle.</h2>
+        <p>AI, ChatGPT, Midjourney, Web3, Web<i>4</i>, NFTs, Generative Art, Blockchain, LLMs, ML models - the list of technologies that are vital to success seems to go on and on and to grow longer with every passing week.
+        </p><p>If you are an agency working to give your clients the best service, if you're a new brand looking for opportunities in rapidly changing markets or if you're an established business keen to keep up with the convergence of legacy media and new outlets - you need people on your side who know what's going on, what's coming next and what to do with it.</p>
+        <h1>That's where Shorty comes in.</h1>
+
+</div></div>
+<!--
+                          <div class="section">
+                                      <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Catherine.png" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Catherine Hudon</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Joie.png" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Joie Mikitson</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Hani.png" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Hani Salim</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Scott.png" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Scott Mallone</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Lara.png" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Lara Drew</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Pablo.png" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Pablo Luzzi</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Simon.png" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Simon Clayton</p>
+                              </div>
+                            </div>
+                          
+
+                            </div> -->
+              <div class="section">
+        <div class="section-txt" data-aos="flip-left">
         <h2>We are a women-owned creative and strategic consultancy at the intersection of  art, culture and technology.</h2>
         <p>We are enlightened generalists fluent in the languages of new media, entertainment and convergence culture. Our guiding principle is to inspire the world around us by creating unconventional content and innovative programs that lead people to engage.</p>
         <p>As strategists, connectors and producers, we have deep-rooted relationships with technologists, artists, celebrities, makers, brands and media platforms. We are often brought in to consult on integrated brand strategies, influencer and music partnerships, experiential activations and production.</p>
       </div>
       </div>
       <div class="section">
-        <form>
+        <form class="contact-form">
+          <h2>Let us know what you're building...</h2>
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" required><br>
 
@@ -299,16 +424,18 @@ let currentSectionIndex = 0;
 let isScrolling = false;
 
 container.addEventListener('wheel', (event) => {
-    console.log('wheel event fired');
   if (isScrolling) return;
-  if (event.deltaY < 0) {
-    currentSectionIndex = Math.max(currentSectionIndex - 1, 0);
-  } else {
-    currentSectionIndex = Math.min(currentSectionIndex + 1, sections.length - 1);
+  const currentSection = sections[currentSectionIndex];
+  const currentSectionRect = currentSection.getBoundingClientRect();
+  if (currentSectionRect.top === 0) {
+    if (event.deltaY < 0) {
+      currentSectionIndex = Math.max(currentSectionIndex - 1, 0);
+    } else {
+      currentSectionIndex = Math.min(currentSectionIndex + 1, sections.length - 1);
+    }
+    scrollToSection(currentSectionIndex);
   }
-  scrollToSection(currentSectionIndex);
 });
-
 function scrollToSection(index) {
   console.log('scrolling to section:', sections[index]);
   isScrolling = true;
@@ -317,6 +444,9 @@ function scrollToSection(index) {
     isScrolling = false;
   }, 500);
 }
+</script>
+<script>
+  AOS.init();
 </script>
   </body>
 </html>
