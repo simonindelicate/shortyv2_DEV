@@ -37,6 +37,60 @@
   display: flex;
   align-items: baseline;
 }
+.mobile-menu {
+  position: relative;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  background-color: black;
+}
+
+.Navigation {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+.Navigation {
+    display: none;
+    position: absolute;
+    top: calc(100% + 36px);
+    /* left: -20px; */
+    right: -20px;
+    background-color: white;
+    padding: 10px;
+    /* border-radius: 5px; */
+    /* box-shadow: 0px 0px 5px rgba(0,0,0,0.1); */
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    white-space: nowrap;
+}
+
+  .Navigation.show {
+    display: block;
+    max-height: 500px; /* adjust this value as needed */
+  }
+}
+
       .splash {
         height: calc(100vh - 120px);
         display: flex;
@@ -255,6 +309,25 @@ form input[type="submit"]:hover {
     margin: 70px auto;
     box-shadow: #333 2px 2px 12px;
 }
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 76%;
+    margin: 50px auto;
+}
+
+.brand {
+  width: 50%;
+}
+
+@media (max-width: 900px) {
+  .brand {
+    width: auto;
+    min-width: 75%;
+    max-width: 100%;
+  }
+}
     </style>
 
 
@@ -263,16 +336,23 @@ form input[type="submit"]:hover {
 
 
 
-    <div class="navbar">
-      <div class="branding"><img src="sm-logo.png" class="branding-logo"></div>
-      <div class="Navigation">About | Services | Contact </div>
-    </div>
+<div class="navbar">
+  <div class="branding"><img src="sm-logo.png" class="branding-logo"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="Navigation">About | Services | Contact </div>
+  </div>
+</div>
     <div class="splash">
       <div class="strapline">
       <h1>A creative consultancy concentrating on entertainment and convergence culture.
       </h1>
     </div>
-      <button class="cta">Let's Talk</button>
+<button class="cta" onclick="scrollToContactForm()">Let's Talk</button>
     </div>
     <div class="sections">
       <div class="section">
@@ -382,7 +462,7 @@ form input[type="submit"]:hover {
         <p>As strategists, connectors and producers, we have deep-rooted relationships with technologists, artists, celebrities, makers, brands and media platforms. We are often brought in to consult on integrated brand strategies, influencer and music partnerships, experiential activations and production.</p>
       </div>
       </div>
-      <div class="section">
+      <div class="section" id="contact-form">
         <form class="contact-form">
           <h2>Let us know what you're building...</h2>
   <label for="name">Name:</label>
@@ -411,7 +491,9 @@ form input[type="submit"]:hover {
       </div>
       <div class="section">
         <div class="section-title"><h1>Partnerships</h1></div>
-        <img src="brands1.jpg"><img src ="brands2.jpg">
+        <div class="brands">
+        <img src="brands1.jpg" class="brand"><img src ="brands2.jpg" class="brand">
+      </div>
       </div>
     </div>
     <div class="footer">Footer</div>
@@ -444,6 +526,17 @@ function scrollToSection(index) {
     isScrolling = false;
   }, 500);
 }
+</script>
+<script>
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.Navigation').classList.toggle('show');
+});
+</script>
+
+<script>
+  function scrollToContactForm() {
+    document.querySelector('#contact-form').scrollIntoView({ behavior: 'smooth' });
+  }
 </script>
 <script>
   AOS.init();
