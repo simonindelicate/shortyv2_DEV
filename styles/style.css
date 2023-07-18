@@ -1,5 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 /* Global styles */
 body {
@@ -460,7 +461,11 @@ footer {
 /* blog */
 
 .blog {
-  display: flex;
+    display: flex;
+    background-color: #ccc;
+    padding: 50px 2.5%;
+    background: linear-gradient(to bottom, #ffa154, #fd64c1);
+    justify-content: space-around;
 }
 
 .blog-sidebar {
@@ -480,23 +485,61 @@ footer {
 }
 
 .blog-feed {
-  width: 80%;
+    /* width: 70%; */
+    padding: 20px;
+    margin: 0 0 75px;
+    background-color: #eee;
+}
+.blog-img {
+max-width:95%;
 }
 
 .blog-entry {
-  /* Add styles for the blog entry here */
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 0 50px;
+    padding: 10px 0 0 20px;
+}
+.blog-headline {
+  position: relative;
+  font-family: 'Silkscreen', cursive;
 }
 
-.blog-headline {
-  /* Add styles for the blog headline here */
+.blog-img-wrapper {
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.blog-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blog-headline h1 {
+    position: absolute;
+    bottom: 24px;
+    left: 27px;
+    right: 0;
+    text-align: left;
+    font-size: 3rem;
+    color: white;
+    text-shadow: -4px -4px 0 black, 3px 6px 0 #b31aaa, -1px 1px 0 black, 1px 1px 0 black;
+    z-index: 10;
+    /* margin: 0 25px 0; */
 }
 
 .blog-content {
-  /* Add styles for the blog content here */
+    padding: 15px 43px 0 0;
 }
 
 .blog-meta {
-  /* Add styles for the blog meta information here */
+font-size: 0.7rem;
+font-style: italic;
+text-align: left;
 }
 
 @media (max-width: 1000px) {
@@ -510,6 +553,35 @@ footer {
   }
 
   .blog-feed {
-    width: 100%;
+    max-width: 94%;
   }
+}
+@media (max-width: 600px) {
+
+  .blog {
+    display: flex;
+    background-color: #ccc;
+   padding: 0;
+
+}
+    .blog-img-wrapper {
+        padding-bottom: 0;
+        height: auto;
+    }
+
+    .blog-img {
+        position: static;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        object-fit: none;
+    }
+
+.blog-headline h1 {
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ffa154;
+}
 }
