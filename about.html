@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+<link rel="stylesheet" href="styles/style.css">
+
+
+  </head>
+  <body>
+
+
+
+<div class="navbar">
+  <div class="branding"><a href="/"><img src="sm-logo.png" class="branding-logo"></a></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="Navigation">
+      <ul>
+        <li><span><a href="about.html">About</a></span></li>
+                <li><span><a href="blog.html">Blog</a></span></li>
+      
+       <li><span><a href="CAB.html">Cultural Advisory Board</a></span></li>
+      
+        <li><span><a href="#contact-form">Contact</a></span></li>
+        </ul> </div>
+  </div>
+</div>
+
+    <div class="sections">
+
+          <div class="section">
+      <div class="sub-strapline">
+      <h1>We are a small but mighty ensemble of thinkers, dreamers & makers.
+      </h1><br />
+      <h2>Meet The Team</h2>
+    </div>
+
+    <div class="staff-cards">
+
+
+                                      <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Catherine.jpg" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Catherine Hudon</p>
+                                <p class="subtitle">CEO</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Joie.jpg" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Joie Mikitson</p>
+                                <p class="subtitle">Head of Innovation</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Hani.jpg" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Hani Salim</p>
+                                <p class="subtitle">Managing Director</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Scott.jpg" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Scott Mallone</p>
+                                <p class="subtitle">Techincal Creative Director</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Lara.jpeg" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Lara Drew</p>
+                                <p class="subtitle">Web3 Business Affairs</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Pablo.jpg" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Pablo Luzzi</p>
+                                <p class="subtitle">Creative Director</p>
+                              </div>
+                            </div>
+                                        <div class="staff" data-aos="zoom-in-up" data-aos-duration="300">
+                              <img src="img/Simon.jpg" alt="Image 1">
+                              <div class="staff-content" >
+                                <p>Simon Clayton</p>
+                                <p class="subtitle">Creative Technologist</p>
+                              </div>
+                            </div>
+                          
+   </div>
+
+                            </div> 
+
+</div>
+   
+
+    <div id="footer"></div>
+    <script>
+const container = document.querySelector('.sections');
+const sections = container.querySelectorAll('.section');
+// ...
+
+let currentSectionIndex = 0;
+let isScrolling = false;
+
+container.addEventListener('wheel', (event) => {
+  if (isScrolling) return;
+  const currentSection = sections[currentSectionIndex];
+  const currentSectionRect = currentSection.getBoundingClientRect();
+  if (currentSectionRect.top === 0) {
+    if (event.deltaY < 0) {
+      currentSectionIndex = Math.max(currentSectionIndex - 1, 0);
+    } else {
+      currentSectionIndex = Math.min(currentSectionIndex + 1, sections.length - 1);
+    }
+    scrollToSection(currentSectionIndex);
+  }
+});
+function scrollToSection(index) {
+  console.log('scrolling to section:', sections[index]);
+  isScrolling = true;
+  sections[index].scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    isScrolling = false;
+  }, 500);
+}
+
+window.addEventListener('load', function() {
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(content => {
+      document.getElementById('footer').innerHTML = content;
+    });
+});
+
+</script>
+<script>
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.Navigation').classList.toggle('show');
+});
+</script>
+
+<script>
+  function scrollToContactForm() {
+    document.querySelector('#contact-form').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+<script>
+  AOS.init();
+</script>
+  </body>
+</html>
