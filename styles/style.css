@@ -1,6 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('/font-awesome-4.6.3/css/font-awesome.min.css');
 
 /* Global styles */
 body {
@@ -96,9 +97,21 @@ img {
   flex-direction: column;
   align-items: center;
   background-color: lightgreen;
-  background-image: url('../bg.jpg');
+  background-image: url('../bg2.jpg');
   background-size: cover;   
 }
+
+.splash2 {
+  height: calc(80vh - 120px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgreen;
+  background-image: url('../img/bg3.png');
+  background-size: cover;   
+}
+
 
 .strapline {
   text-align: center;
@@ -158,6 +171,17 @@ a:hover {
   color: white; 
 }
 
+/*font variants*/
+.smaller {
+  font-size: 0.5rem;
+}
+.centered {
+  text-align: center;
+}
+.socials {
+  color:white;
+  font-size: 2rem;
+}
 /* Navigation links */
 ul {
   list-style: none;
@@ -213,7 +237,8 @@ li span {
 }
 
 .section:nth-child(1) {
-  background: linear-gradient(to bottom, #ffa154, #fd64c1);
+  background-color: white;
+  /* background: linear-gradient(to bottom, #ffa154, #fd64c1); */
   padding: 70px 0;
 }
 
@@ -269,11 +294,12 @@ li span {
 
 /* Cards */
 .card {
-  flex: 0 1 calc(33.33% - 100px);
-  margin: 65px 50px;
-  background: white;
-  max-width: 300px;
-  border-radius: 15px;  
+    flex: 0 1 calc(33.33% - 100px);
+    margin: 65px 50px;
+    background: white;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: #ccc 2px 3px 7px;
 }
 
 .card img {
@@ -284,10 +310,48 @@ li span {
   border-radius: 15px 15px 0 0;
 }
 
+.card-fun {
+    flex: 0 1 calc(33.33% - 100px);
+    margin: 65px auto;
+    background: white;
+    max-width: 200px;
+    border-radius: 15px;
+    box-shadow: #ccc 2px 3px 7px;
+}
+
+.card-fun:hover {
+  background-color: #ff94e1;
+  transition: background-color 0.5s ease;
+}
+
+.card-fun img {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-fun a {
+  color:  #9c5104;
+}
+
+.card-fun a:hover {
+ color:black;
+}
+
 .card-content {
   border: 1px solid white;
   padding: 15px;
   border-radius: 15px;
+}
+
+.card a {
+  color:  #ffa154;
+}
+
+.card a:hover {
+  background-color: black;
 }
 
 @media (max-width: 600px) {
@@ -302,7 +366,20 @@ li span {
 
 }
 
+/*spacer*/
+
+.spacer {
+  height:27px;
+  min-height:27px;
+  margin-top:54px;
+  background-image: url('../img/bg2.png');
+}
+
 /* Form */
+
+.form-header{
+  font-family: 'Silkscreen', sans;
+}
 form {
   width: 500px;
   max-width: 500px;
@@ -368,6 +445,7 @@ form input[type="submit"]:hover {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0 2.5%;
+
 }
 .staff {
     flex: 0 1 calc(27% - 100px);
@@ -375,6 +453,8 @@ form input[type="submit"]:hover {
     background: white;
     border-radius: 15px;
     min-width: 250px;
+
+    box-shadow: #ccc 2px 3px 7px;
 }
 
 .staff img {
