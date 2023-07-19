@@ -1,7 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-@import url('/font-awesome-4.6.3/css/font-awesome.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 /* Global styles */
 body {
@@ -118,7 +118,12 @@ img {
   margin-bottom: 100px;
   max-width: 90%;
 }
-
+.strapline h1 {
+    text-shadow: -1px 1px 0 #da6456, 1px 1px 0 #7d4c5e, 1px -1px 0 #f79c10, -1px -1px 0 #ffc58f;
+}
+ .sub-strapline h1 {
+    text-shadow: -1px 1px 0 #004c58, 1px 1px 0 #db01a0, 1px -1px 0 #fc9e22, -1px -1px 0 #4ee8cc;
+}
 
 .sub-strapline {
   text-align: center;
