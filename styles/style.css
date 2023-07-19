@@ -80,10 +80,11 @@ img {
     white-space: nowrap;
   }
 
-  .Navigation.show {
+.Navigation.show {
     display: block;
     max-height: 500px;
-  }
+    z-index: 100;
+}
 
 }
 
@@ -468,6 +469,18 @@ footer {
     justify-content: space-around;
 }
 
+h2.end-links {
+  font-family: 'Silkscreen', sans;
+}
+
+.blog a {
+  color:#ffa154;
+}
+
+.blog a:hover {
+  color:#fd64c1;
+}
+
 .blog-sidebar {
   width: 20%;
 }
@@ -493,6 +506,9 @@ footer {
 .blog-img {
 max-width:95%;
 }
+.blog-tag {
+  font-size: 1.2em;
+}
 
 .blog-entry {
     text-align: justify;
@@ -505,13 +521,28 @@ max-width:95%;
   font-family: 'Silkscreen', cursive;
 }
 
+.blog-headline-preview {
+  position: relative;
+  font-family: 'Silkscreen', cursive;
+  max-height:250px;
+}
+
 .blog-img-wrapper {
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  overflow: hidden;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .blog-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 94%;
+  object-fit: cover;
+}
+.blog-img-preview {
   position: absolute;
   top: 0;
   left: 0;
@@ -524,8 +555,23 @@ max-width:95%;
     bottom: 24px;
     left: 27px;
     right: 0;
+    max-width: 92%;
     text-align: left;
     font-size: 3rem;
+    color: white;
+    text-shadow: -4px -4px 0 black, 3px 6px 0 #b31aaa, -1px 1px 0 black, 1px 1px 0 black;
+    z-index: 10;
+    /* margin: 0 25px 0; */
+}
+
+.blog-headline-preview h1 {
+    position: absolute;
+    bottom: 24px;
+    left: 27px;
+    right: 0;
+    max-width: 75%;
+    text-align: left;
+    font-size: 2rem;
     color: white;
     text-shadow: -4px -4px 0 black, 3px 6px 0 #b31aaa, -1px 1px 0 black, 1px 1px 0 black;
     z-index: 10;
@@ -574,14 +620,40 @@ text-align: left;
         width: auto;
         height: auto;
         max-width: 100%;
-        object-fit: none;
+        object-fit: cover;
     }
-
+    .blog-img-preview {
+        position: relative;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+    }
 .blog-headline h1 {
     position: static;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
     font-size: 2rem;
     color: #ffa154;
+}
+
+.blog-headline-preview h1 {
+    position: relative;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ffa154;
+    left: 0;
+}
+.blog-headline-preview {
+  position: relative;
+  font-family: 'Silkscreen', cursive;
+  max-height:none;
+}
+.blog-entry {
+  padding: 0;
+}
+.blog-sidebar {
+  display: none;
 }
 }

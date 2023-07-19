@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+<link rel="stylesheet" href="styles/style.css">
+
+
+  </head>
+  <body>
+
+
+
+<div class="navbar">
+  <div class="branding"><a href="/"><img src="sm-logo.png" class="branding-logo"></a></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="Navigation">
+      <ul>
+        <li><span><a href="about.html">About</a></span></li>
+                <li><span><a href="blog.html">Blog</a></span></li>
+      
+       <li><span><a href="CAB.html">Cultural Advisory Board</a></span></li>
+      
+        <li><span><a href="#contact-form">Contact</a></span></li>
+        </ul> </div>
+  </div>
+</div>
+
+<div class="blog">
+
+
+   <div class="blog-feed">
+        <div class="blog-entry">
+          <div class="blog-headline">
+                          <div class="blog-img-wrapper">
+                        <img src="img/blogtech.jpeg" class="blog-img" />
+                      </div>
+<h1>7 Cutting-Edge Technologies Every Business Needs to Know About in 2023</h1>
+<h2 class="blog-tag">TECH</h2>
+
+          </div>
+
+          <div class="blog-content">
+
+
+
+<p>Technology is rapidly evolving and businesses need to keep up with the latest innovations to stay competitive. Here are 7 new and emerging technologies that every business should have on their radar in 2023:</p>
+
+<h2>1. Generative AI</h2>
+
+<p>Generative AI refers to artificial intelligence systems that can generate new content, like text, images, audio, and video. Popular examples include DALL-E for generating images and ChatGPT for conversational text. Generative AI can help businesses quickly create marketing materials, support content, and other assets. It's a cost-effective way to scale content production.</p>
+
+<h2>2. Virtual Reality (VR)</h2>
+
+<p>Virtual reality immerses users in digital experiences through headsets and accessories. VR is going mainstream with applications across training, simulations, virtual events, showrooms, and more. Businesses can use VR internally to train employees or externally to engage customers in new and memorable ways.</p> 
+
+<h2>3. Augmented Reality (AR)</h2>
+
+<p>Augmented reality overlays digital information onto the real world via smartphone cameras and AR glasses. Retailers can let customers visualize products in their own homes with AR. Marketers can create interactive AR ads and experiences. AR opens new possibilities for customer engagement and conversions.</p>
+
+<h2>4. Digital Collectibles</h2>
+
+<p>Digital collectibles use blockchain technology to verify ownership of scarce digital assets like artwork, sports highlights, music, and more. Businesses can use digital collectibles for new revenue streams, marketing, and connecting with fans. NFTs (non-fungible tokens) are a popular example of digital collectibles.</p>
+
+<h2>5. AI Chatbots</h2>
+
+<p>AI-powered chatbots can have natural conversations with customers via text or voice. They provide instant answers to common questions and can handle an array of customer service tasks. Chatbots are a must-have for smoothing communications, improving CX, and keeping service costs down.</p>
+
+<h2>6. 5G Networks</h2>
+
+<p>5G networks offer ultra-fast data speeds, high bandwidth, and low latency connectivity. Businesses will benefit from 5G through enhanced mobile devices, AR/VR applications, connected vehicles, smart infrastructure, and the Internet of Things. 5G paves the way for major technology leaps.</p>
+
+<h2>7. Quantum Computing</h2>
+
+<p>Quantum computing utilizes quantum physics to solve complex problems that are impossible for classical computers. It promises game-changing advances in logistics, transactions, AI, data analytics, precision medicine, and more. Although early stage, quantum computing is worth tracking.</p>
+
+<p>In summary, businesses should keep an eye on these 7 technologies making waves. Adopting innovations early allows businesses to get ahead of competitors and leverage new capabilities. With technology moving so quickly, it pays to be future-ready.</p>
+          </div>
+          <div class="blog-meta">
+            <p>posted by Shorty, 07/18/23</p>
+          </div>
+          <a href="blog.html"><h2 class="end-links">More Posts</h2></a>
+        </div>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+   
+
+    <div id="footer"></div>
+    <script>
+
+
+window.addEventListener('load', function() {
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(content => {
+      document.getElementById('footer').innerHTML = content;
+    });
+});
+
+</script>
+<script>
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.Navigation').classList.toggle('show');
+});
+</script>
+
+<script>
+  function scrollToContactForm() {
+    document.querySelector('#contact-form').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+<script>
+  AOS.init();
+</script>
+  </body>
+</html>

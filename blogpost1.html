@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+<link rel="stylesheet" href="styles/style.css">
+
+
+  </head>
+  <body>
+
+
+
+<div class="navbar">
+  <div class="branding"><a href="/"><img src="sm-logo.png" class="branding-logo"></a></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="Navigation">
+      <ul>
+        <li><span><a href="about.html">About</a></span></li>
+                <li><span><a href="blog.html">Blog</a></span></li>
+      
+       <li><span><a href="CAB.html">Cultural Advisory Board</a></span></li>
+      
+        <li><span><a href="#contact-form">Contact</a></span></li>
+        </ul> </div>
+  </div>
+</div>
+
+<div class="blog">
+
+
+   <div class="blog-feed">
+        <div class="blog-entry">
+          <div class="blog-headline">
+                          <div class="blog-img-wrapper">
+                        <img src="img/blogcyber.jpeg" class="blog-img" />
+                      </div>
+            <h1>Staying Ahead of the Tech Curve in 2023</h1>
+            <h2 class="blog-tag">TECH</h2>
+
+          </div>
+
+          <div class="blog-content">
+
+          <p>The pace of technological advancement today is blisteringly fast. Trends come and go at lightning speed, with new innovations emerging constantly. For businesses, keeping up with the latest tech and harnessing it effectively poses a major challenge. Fall behind the curve, and risk becoming obsolete.</p> <p>But with challenge comes opportunity. Savvy companies able to ride the wave of change stand to gain tremendous competitive advantage. The key is partnering with experts who live and breathe the cutting edge.</p> <p>One field exploding right now is artificial intelligence. AI is revolutionizing everything from marketing to customer service. Early adopters of AI are already pulling far ahead of the pack.</p> <p>Another massively disruptive tech is Web3 and blockchain. Crypto, NFTs, the metaverse - Web3 promises to fundamentally reshape business and society. Those who grasp it early can position themselves for enormous success.</p> <p>Tying everything together is convergence culture - the blending of physical and digital worlds. The companies best prepared for our emerging convergent future will win big.</p> <p>All this change can feel dizzying. But by teaming up with a consultancy deeply versed in the latest technologies, you can turn disruption into an engine of growth. Look for a partner intimately familiar with bleeding-edge tech like AI, Web3, and convergence culture.</p> <p>The winds of change are blowing fast. With the right guidance, your business can harness those winds to soar to new heights. The future belongs to the bold - are you ready to seize it?</p> <p>Connect with us today to future-proof your organization for the world ahead.</p>
+          </div>
+          <div class="blog-meta">
+            <p>posted by Shorty, 07/18/23</p>
+          </div>
+                    <a href="blog.html"><h2 class="end-links">More Posts</h2></a>
+        </div>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+   
+
+    <div id="footer"></div>
+    <script>
+
+
+window.addEventListener('load', function() {
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(content => {
+      document.getElementById('footer').innerHTML = content;
+    });
+});
+
+</script>
+<script>
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.Navigation').classList.toggle('show');
+});
+</script>
+
+<script>
+  function scrollToContactForm() {
+    document.querySelector('#contact-form').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+<script>
+  AOS.init();
+</script>
+  </body>
+</html>
