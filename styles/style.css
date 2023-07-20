@@ -774,7 +774,8 @@ text-align: left;
 }
 
       .link-title {
-        font-size: 24px;
+        font-size: 18px;
+        font-family: 'Silkscreen', sans;
         text-decoration: none;
       }
       .link-description {
