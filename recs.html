@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                      <!-- Other head content -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>My Website</title>
+<link rel="stylesheet" href="styles/style.css">
+
+
+  </head>
+  <body>
+
+
+
+<div class="navbar">
+  <div class="branding"><a href="/"><img src="sm-logo.png" class="branding-logo"></a></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="Navigation">
+      <ul>
+        <li><span><a href="about.html">About</a></span></li>
+                <li><span><a href="blog.html">Blog</a></span></li>
+      
+       <li><span><a href="CAB.html">Cultural Advisory Board</a></span></li>
+      
+        <li><span><a href="#contact-form">Contact</a></span></li>
+        </ul> </div>
+  </div>
+</div>
+
+<div class="blog">
+
+
+   <div class="blog-feed">
+
+    <h1 class="form-header">Shorty Recommends...</h1>
+    <ul id="links"></ul>
+
+</div></div>
+
+
+    <div id="footer"></div>
+    <script>
+
+
+window.addEventListener('load', function() {
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(content => {
+      document.getElementById('footer').innerHTML = content;
+    });
+});
+
+</script>
+<script>
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.Navigation').classList.toggle('show');
+});
+</script>
+
+<script>
+  function scrollToContactForm() {
+    document.querySelector('#contact-form').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+<script>
+  async function scrapeLinks() {
+    console.log('Scraping links');
+    // Call the scraper.js serverless function
+    const response = await fetch('/.netlify/functions/scraper');
+    const data = await response.json();
+    console.log(data);
+
+    // Display the links
+    const linksList = document.getElementById('links');
+    linksList.innerHTML = '';
+    data.forEach((link) => {
+      const li = document.createElement('li');
+
+      if (link.ogImage) {
+        const img = document.createElement('img');
+        img.src = link.ogImage;
+        img.className = 'link-img'; // Add the link-img class to the img element
+        li.appendChild(img);
+      }
+
+      const a = document.createElement('a');
+      a.href = link.url;
+      a.textContent = link.title;
+      a.className = 'link-title'; // Add the link-title class to the a element
+      li.appendChild(a);
+
+      if (link.ogDescription) {
+        const p = document.createElement('p');
+        p.textContent = link.ogDescription;
+        p.className = 'link-description'; // Add the link-description class to the p element
+        li.appendChild(p);
+      }
+
+      linksList.appendChild(li);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', scrapeLinks);
+</script>
+
+
+<script>
+  AOS.init();
+</script>
+  </body>
+</html>
