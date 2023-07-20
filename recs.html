@@ -70,18 +70,18 @@ document.querySelector('.mobile-menu-toggle').addEventListener('click', function
     document.querySelector('#contact-form').scrollIntoView({ behavior: 'smooth' });
   }
 </script>
-
 <script>
+  let skip = 0;
+
   async function scrapeLinks() {
     console.log('Scraping links');
-    // Call the scraper.js serverless function
-    const response = await fetch('/.netlify/functions/scraper');
+    // Call the scraper.js serverless function with the current skip value
+    const response = await fetch(`/.netlify/functions/scraper?skip=${skip}`);
     const data = await response.json();
     console.log(data);
 
     // Display the links
     const linksList = document.getElementById('links');
-    linksList.innerHTML = '';
     data.forEach((link) => {
       const li = document.createElement('li');
 
@@ -107,10 +107,38 @@ document.querySelector('.mobile-menu-toggle').addEventListener('click', function
 
       linksList.appendChild(li);
     });
+
+    // Increment the skip value by the number of results returned
+    skip += data.length;
+
+    // Check if a "Load more" link already exists on the page
+    let loadMoreLink = document.getElementById('loadMoreLink');
+    if (!loadMoreLink) {
+      // Create a new "Load more" link and append it to the page
+      loadMoreLink = document.createElement('a');
+      loadMoreLink.href = '#';
+      loadMoreLink.textContent = 'Load more';
+      loadMoreLink.id = 'loadMoreLink';
+      linksList.parentNode.insertBefore(loadMoreLink, linksList.nextSibling);
+
+      // Add an event listener to the "Load more" link to fetch more results when it's clicked
+      loadMoreLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        scrapeLinks();
+      });
+    }
+
+    // Show or hide the "Load more" link depending on whether there are more results to load
+    if (data.length === 0) {
+      loadMoreLink.style.display = 'none';
+    } else {
+      loadMoreLink.style.display = '';
+    }
   }
 
   document.addEventListener('DOMContentLoaded', scrapeLinks);
 </script>
+
 
 
 <script>

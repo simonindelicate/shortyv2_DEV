@@ -16,6 +16,9 @@ const dbName = 'Album';
 
 exports.handler = async (event, context) => {
   try {
+    // Get the skip value from the request query string
+    const skip = event.queryStringParameters.skip ? parseInt(event.queryStringParameters.skip) : 0;
+
     // Use connect method to connect to the server
     await client.connect();
     console.log('Connected successfully to server');
@@ -25,8 +28,8 @@ exports.handler = async (event, context) => {
     // Get the collection of urls and titles
     const collection = db.collection('shortylinks');
 
-    // Find all documents in the collection sorted by _id in descending order
-    const docs = await collection.find({}).sort({ _id: -1 }).toArray();
+    // Find the first 7 documents in the collection sorted by _id in descending order, skipping the specified number of documents
+    const docs = await collection.find({}).sort({ _id: -1 }).skip(skip).limit(7).toArray();
 
     // Create a new array to store the data with the extracted og:description and og:image values
     const dataWithOgValues = [];
